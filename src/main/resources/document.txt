@@ -2,7 +2,8 @@
 https://github.com/Netflix/Hystrix
 https://github.com/Netflix/Hystrix/wiki/How-To-Use
 http://hot66hot.iteye.com/blog/2155036
-
+https://github.com/Netflix/Hystrix/wiki/How-it-Works
+https://www.jianshu.com/p/b9af028efebb
 
 hystrix其他各种策略配置：
 http://hot66hot.iteye.com/blog/2155036
