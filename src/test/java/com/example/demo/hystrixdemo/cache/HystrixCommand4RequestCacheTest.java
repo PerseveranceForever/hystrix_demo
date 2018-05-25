@@ -80,9 +80,9 @@ public class HystrixCommand4RequestCacheTest extends HystrixCommand<Boolean> {
                 assertTrue(command3a.execute());
                 // this is a new request context so this should not come from cache
                 assertFalse(command3a.isResponseFromCache());
-
-                // 没有command3b.execute()，command3b.isResponseFromCache()就一直为false
-                assertFalse(command3b.isResponseFromCache());
+                // 从command3a.execute()执行中得到的cache
+                command3b.execute();
+                assertTrue(command3b.isResponseFromCache());
             } finally {
                 context.shutdown();
             }

@@ -31,7 +31,7 @@ public class HystrixCommand4RequestCollapsingTest {
 
                 Future<String> f5 = new HelloWorldHystrixCollapser(5).queue();
                 // f5和f6，如果sleep时间够小则会合并，如果sleep时间够大则不会合并，默认10ms
-                TimeUnit.MILLISECONDS.sleep(10);
+//                TimeUnit.MILLISECONDS.sleep(10);
                 Future<String> f6 = new HelloWorldHystrixCollapser(6).queue();              
           
                 System.out.println(System.currentTimeMillis() + " : " + f1.get());

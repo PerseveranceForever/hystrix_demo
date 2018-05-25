@@ -8,6 +8,8 @@ package com.example.demo.hystrixdemo.fallback;
 
 import com.netflix.hystrix.HystrixCommand;
 import com.netflix.hystrix.HystrixCommandGroupKey;
+import com.netflix.hystrix.exception.HystrixBadRequestException;
+import com.netflix.hystrix.exception.HystrixTimeoutException;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -38,10 +40,10 @@ public class HystrixFallback4ExceptionTest extends HystrixCommand<String> {
 
     	/*---------------会触发fallback的case-------------------*/
         // 无限循环，实际上属于超时
-    	int j = 0;
-    	while (true) {
-    		j++;
-    	}
+//    	int j = 0;
+//    	while (true) {
+//    		j++;
+//    	}
 
 
         // 除零异常
@@ -63,7 +65,7 @@ public class HystrixFallback4ExceptionTest extends HystrixCommand<String> {
 //    	}
 
         // HystrixBadRequestException异常由非法参数或非系统错误引起，不会触发fallback，也不会被计入熔断器
-//        throw new HystrixBadRequestException("HystrixBadRequestException is never trigger fallback");
+        throw new HystrixBadRequestException("HystrixBadRequestException is never trigger fallback");
 
 //		return name;
     }

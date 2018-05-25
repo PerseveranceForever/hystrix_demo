@@ -91,8 +91,8 @@ public class HystrixCommand4ThreadPoolTest extends HystrixCommand<String> {
 	        	try {
 	//        		assertEquals("fallback: Hlx", new HystrixCommand4ThreadPoolTest("Hlx").execute());
 	        		System.out.println("===========" + new HystrixCommand4ThreadPoolTest(" not get available thread" + i).execute());
-//	        		Future<String> future = new HystrixCommand4ThreadPoolTest("Hlx1"+i).queue();
-//	        		System.out.println("===========" + future);
+//	        		Future<String> future = new HystrixCommand4ThreadPoolTest("not get available thread" + i).queue();
+//	        		System.out.println("===========" + future.get());
 	        	} catch(Exception e) {
 	        		System.out.println("run()抛出HystrixBadRequestException时，被捕获到这里" + e.getCause());
 	        	}
